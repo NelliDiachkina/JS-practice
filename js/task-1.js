@@ -50,7 +50,7 @@ const account = {
 
   withdraw(amount) {
     if (amount > this.balance) {
-      return 'Недостатньо коштів на рахунку';
+      return 'Недостатньо коштів на рахунку. Транзакцію відхилено';
     }
     const newTransaction = this.createTransaction(Transaction.WITHDRAW, amount);
     this.transactions.push(newTransaction);
@@ -94,8 +94,11 @@ console.log(account.getTransactionDetails(3));
 console.log(account.getTransactionDetails(1));
 console.log(account.withdraw(3500));
 console.log(account.getBalance());
-console.log(account.getTransactionDetails(4));
 account.withdraw(100);
 console.log(account.getTransactionType('DEPOSIT'));
 console.log(account.getTransactionType('WITHDRAW'));
 console.log(account.getBalance());
+account.withdraw(100);
+console.log(account.getBalance());
+console.log(account.getTransactionType('WITHDRAW'));
+console.log(account.getTransactionDetails(4));
