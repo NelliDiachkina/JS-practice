@@ -71,7 +71,7 @@ const account = {
 
   //Метод повертає кількість транзакції певного типу з усієї історії транзакцій
 
-  getTransactionType(type) {
+  getQuantityTransactionType(type) {
     const filteredTransactionType = this.transactions.filter(
       transaction => transaction.type === Transaction[type]
     );
@@ -99,8 +99,8 @@ console.log(account.getBalance());
 account.withdraw(200);
 console.log(account.getBalance());
 console.log(account.transactions);
-console.log(account.getTransactionType('DEPOSIT'));
-console.log(account.getTransactionType('WITHDRAW'));
+console.log(account.getQuantityTransactionType('DEPOSIT'));
+console.log(account.getQuantityTransactionType('WITHDRAW'));
 console.log(account.getTransactionDetails(4));
 console.log(account.getTransactionDetails(5));
 console.log(account.getTransactionDetails(10));
