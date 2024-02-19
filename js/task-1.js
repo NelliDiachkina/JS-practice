@@ -22,9 +22,8 @@ const account = {
   //Приймає суму та тип транзакцій
 
   createTransaction(type, amount) {
-    this.id += 1;
     return {
-      id: this.id,
+      id: (this.id += 1),
       type: type,
       amount: amount,
     };
@@ -89,16 +88,19 @@ account.deposit(2200);
 console.log(account.getBalance());
 account.withdraw(300);
 console.log(account.getBalance());
-console.log(account.transactions);
 console.log(account.getTransactionDetails(3));
 console.log(account.getTransactionDetails(1));
 console.log(account.withdraw(3500));
 console.log(account.getBalance());
 account.withdraw(100);
-console.log(account.getTransactionType('DEPOSIT'));
-console.log(account.getTransactionType('WITHDRAW'));
 console.log(account.getBalance());
 account.withdraw(100);
 console.log(account.getBalance());
+account.withdraw(200);
+console.log(account.getBalance());
+console.log(account.transactions);
+console.log(account.getTransactionType('DEPOSIT'));
 console.log(account.getTransactionType('WITHDRAW'));
 console.log(account.getTransactionDetails(4));
+console.log(account.getTransactionDetails(5));
+console.log(account.getTransactionDetails(10));
